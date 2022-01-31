@@ -15,7 +15,10 @@ public class UserRegistration {
         return employeeeEmail -> employeeeEmail.matches("^abc[.a-z]+@bl[.]co[.a-z]+");
     }
     public static Validate mobile() {
-        return employeeEmail -> employeeEmail.matches("91\\s[8-9][0-9]{9}$");
+        return employeeMobile -> employeeMobile.matches("91\\s[8-9][0-9]{9}$");
+    }
+    public static Validate password() {
+        return employeeMobile -> employeeMobile.matches("^[A-Za-z]{8,}$");
     }
    public static void main(String[] args) {
             boolean isValidName = UserRegistration.firstName().validateDetails("Anshul");
@@ -26,5 +29,7 @@ public class UserRegistration {
                  System.out.println(isValidEmailName);
             boolean isValidMobile = UserRegistration.mobile().validateDetails("91 9919819801");
                  System.out.println(isValidMobile);
+            boolean isValidPassword = UserRegistration.password().validateDetails("absolute");
+                 System.out.println(isValidPassword);
                 }
 }
