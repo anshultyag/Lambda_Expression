@@ -20,7 +20,11 @@ public class UserRegistration {
     public static Validate password() {
         return employeeMobile -> employeeMobile.matches("^[A-Za-z]{8,}$");
     }
-   public static void main(String[] args) {
+    public static Validate passwordUpperCase() {
+        return employeePasswordUpperCase -> employeePasswordUpperCase.matches("^(?=.*[A-Z])[A-Za-z]{8,}$");
+    }
+   
+        public static void main(String[] args) {
             boolean isValidName = UserRegistration.firstName().validateDetails("Anshul");
                  System.out.println(isValidName);
             boolean isValidLastName = UserRegistration.lastName().validateDetails("Tyagi");
@@ -31,5 +35,7 @@ public class UserRegistration {
                  System.out.println(isValidMobile);
             boolean isValidPassword = UserRegistration.password().validateDetails("absolute");
                  System.out.println(isValidPassword);
+            boolean isValidPasswordUpperCase = UserRegistration.passwordUpperCase().validateDetails("Absolute");
+            System.out.println(isValidPasswordUpperCase);
                 }
 }
