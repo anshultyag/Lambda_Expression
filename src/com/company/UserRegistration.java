@@ -6,15 +6,17 @@ public class UserRegistration {
              boolean validateDetails(String name);
         }
     public static Validate firstName() {
-            return employeeName -> employeeName.matches("^[A-Z][A-Za-z]{2,}$");
+            return employeeFname -> employeeFname.matches("^[A-Z][A-Za-z]{2,}$");
         }
     public static Validate lastName() {
-        return employeeName -> employeeName.matches("^[A-Z][A-Za-z]{2,}$");
+        return employeeLname -> employeeLname.matches("^[A-Z][A-Za-z]{2,}$");
     }
     public static Validate email() {
-        return employeeName -> employeeName.matches("^abc[.a-z]+@bl[.]co[.a-z]+");
+        return employeeeEmail -> employeeeEmail.matches("^abc[.a-z]+@bl[.]co[.a-z]+");
     }
-
+    public static Validate mobile() {
+        return employeeEmail -> employeeEmail.matches("91\\s[8-9][0-9]{9}$");
+    }
    public static void main(String[] args) {
             boolean isValidName = UserRegistration.firstName().validateDetails("Anshul");
                  System.out.println(isValidName);
@@ -22,5 +24,7 @@ public class UserRegistration {
                  System.out.println(isValidLastName);
             boolean isValidEmailName = UserRegistration.email().validateDetails("abc.abc@bl.co.in");
                  System.out.println(isValidEmailName);
+            boolean isValidMobile = UserRegistration.mobile().validateDetails("91 9919819801");
+                 System.out.println(isValidMobile);
                 }
 }
