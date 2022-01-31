@@ -15,7 +15,7 @@ public class UserRegistration {
         return employeeeEmail -> employeeeEmail.matches("^abc[.a-z]+@bl[.]co[.a-z]+");
     }
     public static Validate mobile() {
-        return employeeEmail -> employeeEmail.matches("91\\s[8-9][0-9]{9}$");
+        return employeeMobile -> employeeMobile.matches("91\\s[8-9][0-9]{9}$");
     }
    public static void main(String[] args) {
             boolean isValidName = UserRegistration.firstName().validateDetails("Anshul");
