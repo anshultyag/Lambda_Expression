@@ -26,6 +26,10 @@ public class UserRegistration {
     public static Validate passwordOneNumeric() {
         return employeePasswordOneNumeric -> employeePasswordOneNumeric.matches("^(?=.*[A-Z])(?=.*[0-9])[A-Za-z\\d]{8,}$");
     }
+    public static Validate passwordSpecialCharacter() {
+        return employeePasswordSpecialCharacter -> employeePasswordSpecialCharacter.matches("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z\\d]{8,}");
+    }
+
         public static void main(String[] args) {
             boolean isValidName = UserRegistration.firstName().validateDetails("Anshul");
                  System.out.println(isValidName);
@@ -41,5 +45,7 @@ public class UserRegistration {
                  System.out.println(isValidPasswordUpperCase);
             boolean isValidPasswordOneNumeric = UserRegistration.passwordOneNumeric().validateDetails("Absolute778");
                  System.out.println(isValidPasswordOneNumeric);
+            boolean isValidPasswordSpecialCharacter = UserRegistration.passwordSpecialCharacter().validateDetails("Absolute@778");
+                 System.out.println(isValidPasswordSpecialCharacter);
                 }
 }
